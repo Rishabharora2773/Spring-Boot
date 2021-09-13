@@ -4,13 +4,16 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.springboot.tutorial.model.*;
 
 @Controller
 public class UserController {
 	
-	@RequestMapping("demo")
+	@RequestMapping("/demo")
 	public String demo(Model model) {
 		model.addAttribute("message", "Hello from Thymeleaf!");
 		model.addAttribute("name", "Rishab");
@@ -45,4 +48,18 @@ public class UserController {
 		
 		return "demo2";
 	}
+	
+	@RequestMapping("/add")
+	public String add() {
+		int num = 10/0;
+		return "MathError";
+	}
+	
+	@RequestMapping("/update")
+	public String update() {
+		String s = null;
+		s = s.toLowerCase(); // this should cause null pointer exception
+		return "NullPointerError";
+	}
+	
 }
