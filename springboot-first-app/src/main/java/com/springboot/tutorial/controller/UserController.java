@@ -40,7 +40,7 @@ public class UserController {
 		ArrayList<User> users = new ArrayList<>();
 		users.add(new User("Rishab", 1, 24));
 		users.add(new User("Kashish", 2, 25));
-		users.add(new User("Vikash", 1, 26));
+		users.add(new User("Vikash", 3, 26));
 		model.addAttribute("users", users);
 		
 		return "demo2";

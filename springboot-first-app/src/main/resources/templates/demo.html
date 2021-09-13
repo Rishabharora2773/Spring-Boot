@@ -7,7 +7,7 @@
 <body>
    <h3 th:text="${name}">  </h3>
    <div th:if="${grade}>=60">
-      You passed the exam!
+      You successfully passed the exam!
       <div th:switch="${GPA}"> You are
 	 <span th:case="A"> Excellent! </span>
 	 <span th:case="B">Good</span>
